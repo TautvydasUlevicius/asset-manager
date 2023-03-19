@@ -12,12 +12,15 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(
  *     name="assets",
  *     uniqueConstraints={
+ *
  *         @ORM\UniqueConstraint(name="assets_uuid_unique_idx", columns={"uuid"})
  *     },
  *     indexes={
+ *
  *         @ORM\Index(name="assets_user_id_idx", columns={"user_id"}),
  *     }
  * )
+ *
  * @ORM\Entity(repositoryClass="App\Repository\AssetRepository")
  */
 class Asset
@@ -26,7 +29,9 @@ class Asset
      * @var int
      *
      * @ORM\Column(name="id", type="bigint")
+     *
      * @ORM\Id
+     *
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private int $id;
@@ -63,6 +68,7 @@ class Asset
      * @var User
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
+     *
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private User $user;

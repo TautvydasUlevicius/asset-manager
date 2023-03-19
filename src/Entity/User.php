@@ -12,10 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(
  *     name="users",
  *     uniqueConstraints={
+ *
  *         @ORM\UniqueConstraint(name="users_email_unique_idx", columns={"email"}),
  *         @ORM\UniqueConstraint(name="users_uuid_unique_idx", columns={"uuid"})
  *     }
  * )
+ *
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
 class User
@@ -24,7 +26,9 @@ class User
      * @var int
      *
      * @ORM\Column(name="id", type="bigint")
+     *
      * @ORM\Id
+     *
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private int $id;
