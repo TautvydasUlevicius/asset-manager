@@ -1,0 +1,18 @@
+version: "3.9"
+
+networks:
+  dev_env:
+    driver: bridge
+
+services:
+  asset-manager-db:
+    image: debezium/postgres:10
+    container_name: asset-manager-db
+    networks:
+      - dev_env
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=app
