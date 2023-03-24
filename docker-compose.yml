@@ -26,6 +26,8 @@ services:
       - ../asset-manager/:/var/www/asset-manager
     depends_on:
       - asset-manager-db
+    networks:
+      - dev_env
   asset-manager-nginx:
     container_name: asset-manager-nginx
     image: nginx:stable-alpine
@@ -37,3 +39,5 @@ services:
     depends_on:
       - asset-manager-php
       - asset-manager-db
+    networks:
+      - dev_env
