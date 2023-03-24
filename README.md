@@ -2,6 +2,7 @@
 
 * Steps that were skipped to save time
   * Api documentation was not written to save time. (Would write open api spec, previously known as swagger)
+  * Github workflow / actions implementation
 
 In this application I allow myself to edit commited migration files. Normally after migrations are 
 commited and merged you would not touch them, you would create new migration files. But let us assume
