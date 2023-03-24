@@ -55,4 +55,4 @@ return (new PhpCsFixer\Config())
     ->setFinder($finder)
     ->setCacheFile('.php-cs-fixer.cache') // forward compatibility with 3.x line
     ->setRiskyAllowed(true)
-    ;
+;

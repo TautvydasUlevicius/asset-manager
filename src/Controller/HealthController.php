@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HealthController extends AbstractController
 {
     /**
-     * @Route("/health", name="health")
+     * @Route("/health", name="health", methods={"GET"})
      *
      * @return Response
      */
