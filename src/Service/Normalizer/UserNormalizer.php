@@ -13,9 +13,9 @@ class UserNormalizer implements NormalizerInterface, DenormalizerInterface
     /**
      * @param string $json
      *
-     * @return CreateUserRequest
-     *
      * @throws ApiException
+     *
+     * @return CreateUserRequest
      */
     public function normalize(string $json): CreateUserRequest
     {

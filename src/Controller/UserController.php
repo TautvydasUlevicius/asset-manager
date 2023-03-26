@@ -67,6 +67,7 @@ class UserController extends AbstractController
         } catch (Exception $exception) {
             $this->logger->error('Failed to create user: ' . $exception->getMessage());
             $errorResponse = new ErrorResponse(Response::HTTP_BAD_REQUEST, 'Failed to create user');
+
             return new JsonResponse($this->errorResponseNormalizer->denormalize($errorResponse), Response::HTTP_BAD_REQUEST);
         }
 

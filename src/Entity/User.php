@@ -13,6 +13,7 @@ use Symfony\Component\Uid\Uuid;
  * @ORM\Table(
  *     name="users",
  *     uniqueConstraints={
+ *
  *         @ORM\UniqueConstraint(name="users_email_unique_idx", columns={"email"}),
  *         @ORM\UniqueConstraint(name="users_uuid_unique_idx", columns={"uuid"})
  *     }
