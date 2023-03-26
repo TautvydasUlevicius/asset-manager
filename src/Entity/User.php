@@ -7,11 +7,13 @@ namespace App\Entity;
 use DateTimeImmutable;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Uid\Uuid;
 
 /**
  * @ORM\Table(
  *     name="users",
  *     uniqueConstraints={
+ *
  *         @ORM\UniqueConstraint(name="users_email_unique_idx", columns={"email"}),
  *         @ORM\UniqueConstraint(name="users_uuid_unique_idx", columns={"uuid"})
  *     }
@@ -62,6 +64,7 @@ class User
         $this->email = $email;
         $this->createdAt = new DateTimeImmutable();
         $this->updatedAt = new DateTimeImmutable();
+        $this->uuid = strval(Uuid::v4());
     }
 
     public function getId(): int
